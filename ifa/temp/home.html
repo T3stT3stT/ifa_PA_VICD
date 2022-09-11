@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
+	<button type="button" class="collapsible">+ Add a disease</button>
+	<div class="addDisease">
+		<div class="diagnose">	
+			<form action="{{ url_for('home') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+				<p>Please inserte here all informations about the illnes you want to register:</p>
+				<input type="text" name="dname" placeholder="Enter here the disease" id="dname" required>
+				<input type="number" name="probability" placeholder="Enter here the probability in decimal numbers (0.1, 0.002, etc)" id="probability" required step="any">
+				<input type="text" name="dbsym1" placeholder="Enter here a symptom" id="dbsym1" required>
+				<input type="text" name="dbsym2" placeholder="Enter here a symptom" id="dbsym2" required>
+				<input type="text" name="dbsym3" placeholder="Enter here a symptom" id="dbsym3" required>
+				<input type="text" name="dbsym4" placeholder="Enter here a symptom" id="dbsym4" required>
+				<input type="text" name="dbsym5" placeholder="Enter here a symptom" id="dbsym5" required>
+				<input type="text" name="dlink" placeholder="Enter a source for the documentation of the disease" id="dlink" required>
+				<input type="file" name="img1" id="img1" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit">
+			</form>
+		</div>
+	</div>
+	<script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+    			if (content.style.display === "block") {
+      				content.style.display = "none";
+    			} 	
+			else {
+      				content.style.display = "block";
+    			}
+  		});
+	}
+	</script>
+{% endblock %}

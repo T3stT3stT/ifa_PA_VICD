@@ -1,0 +1,71 @@
+{% extends 'layout_diagnose.html' %}
+
+{% block title %}What disease do you have?{% endblock %}
+
+{% block content %}
+
+<h2>Your results</h2>
+<div>
+    <p>You could have following diseases:</p>
+    <table>
+        	<tr>	
+			<h1>1st Place</h1>
+            		<td>Diseases</td>
+            		<td>{{ dname1 }}</td>
+        	</tr>	
+        	<tr>
+            		<td>Image</td>
+	    		<td><center><img src="{{dimg1}}" alt="Mike" height="240px" width="300px"></td>
+       	 	</tr>
+        	<tr>
+            		<td>Link to the Wiki:</td>
+	    		<td><h3><a href="{{dlink1}}">{{dlink1}}</a></h3></td>
+        	</tr>
+        	<tr>
+            		<td>Ultimate-Diseases-Matching-Score</td>
+            		<td>{{ dprob1 }}</td>
+        	</tr>	
+    </table>
+    <table>
+        	<tr>
+            		<h1>2nd Place</h1>
+			<td>Diseases</td>
+            		<td>{{ dname2 }}</td>
+        	</tr>
+       			<tr>
+	            	<td>Image</td>
+        	    	<td><center><img src="{{dimg2}}" alt="Mike" height="240px" width="300px"></td>
+        	</tr>
+        	<tr>
+		        <td>Link to the Wiki:</td>
+ 	    		<td><h3><a href="{{dlink2}}">{{dlink2}}</a></h3></td>
+       		</tr>
+        	<tr>
+            		<td>Ultimate-Diseases-Matching-Score</td>
+            		<td>{{ dprob2 }}</td>
+        	</tr>	
+
+    </table>
+    <table>
+        	<tr>
+			<h1>3rd Place</h1>
+			<td>Diseases</td>
+		        <td>{{ dname3 }}</td>
+        	</tr>
+        	<tr>
+            		<td>Image</td>
+	    		<td><center><img src="{{dimg3}}" alt="Mike" height="240px" width="300px"></td>
+        	</tr>
+        	<tr>
+            		<td>Link to the Wiki:</td>
+			<td><h3><a href="{{dlink3}}">{{dlink3}}</a></h3></td>
+        	</tr>
+        	<tr>
+            		<td>Ultimate-Diseases-Matching-Score</td>
+            		<td>{{ dprob3 }}</td>
+        	</tr>	
+
+    </table>
+</div>
+
+{% endblock  %}

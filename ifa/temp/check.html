@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Medcial NR Check</title>
+		<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.png') }}">
+		<link rel="icon" type="image/x-icon" href="/var/ifa/temp/favicon.ico">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="check">
+			<h1>Check MLNr</h1>	
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}">Register</a>
+				<a href="{{ url_for('check') }}" class="active">Check</a>
+				<a href="{{ url_for('diagnose') }}">Start</a>
+			</div>
+
+			<form action="{{ url_for("check")}}" method="post">
+			<label for="medicalNR">
+				<i class='fas fa-notes-medical fa-lg' style='color:#ffffff'></i>
+			</label>
+			<input type="text" id="medicalNR" name="medicalNR" placeholder="Medical License Number" required>
+			<div class="msg">{{ msg }}</div>
+			<input type="submit" value="Check Number">
+		</div>
+	</body>
+</html>

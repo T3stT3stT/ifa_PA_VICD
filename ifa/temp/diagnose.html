@@ -1,0 +1,19 @@
+{% extends 'layout_diagnose.html' %}
+
+{% block title %}What disease do you have?{% endblock %}
+
+{% block content %}
+<h2>What disease do you have?</h2>
+<p>Enter in the following forms your symptoms:</p>
+<div class="diagnose">
+	<form action="{{ url_for('diagnose') }}" method="post" autocomplete="off">
+		<input type="text" name="fsym1" placeholder="Enter your first symptom"  id="fsym1" required>
+		<input type="text" name="fsym2" placeholder="Enter your second symptom" id="fsym2" required>
+		<input type="text" name="fsym3" placeholder="Enter your third symptom"  id="fsym3" required>
+		<input type="text" name="fsym4" placeholder="Enter your fourth symptom" id="fsym4" required>
+		<input type="text" name="fsym5" placeholder="Enter your fifth symptom"  id="fsym5" required>
+		<div class="msg">{{ msg }}</div>
+		<input type="submit" value="Submit Symptoms">
+	</form>
+</div>
+{% endblock  %}
